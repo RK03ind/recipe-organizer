@@ -65,7 +65,8 @@
     padding: 2rem;
     position: absolute;
     top: 50px;
-    left: 25%;
+    left: 50%;
+    transform: translateX(-50%);
     // transform: translate(-50%, -50%);
     width: fit-content;
     h2 {
