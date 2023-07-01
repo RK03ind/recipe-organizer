@@ -46,6 +46,7 @@ const AddEditItem = ({ mode, data = null }) => {
       ingredients: trimArray(formState.ingredients),
       instructions: trimArray(formState.instructions),
     };
+    console.log(trimmedData);
     dataCtx.dispatch({
       type: mode === "add" ? "ADD" : "UPDATE",
       payload: trimmedData,

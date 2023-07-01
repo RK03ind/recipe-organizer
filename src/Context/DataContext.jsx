@@ -39,9 +39,13 @@ const reducer = (state, action) => {
       ];
     }
     case "UPDATE": {
-      return state.map((item) =>
-        item.id === action.payload.id ? action.payload : item
-      );
+      return state.map((item) => {
+        console.log(action.payload);
+        // if (item.id === action.payload.id) {
+        //   return action.payload;
+        // } else item;
+        return item;
+      });
     }
     default:
       return state;

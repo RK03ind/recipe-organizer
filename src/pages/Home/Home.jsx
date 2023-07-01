@@ -80,10 +80,11 @@ const Home = () => {
         })}
         <GrAddCircle
           onClick={() =>
-            setModalState((prevState) => ({
-              ...prevState,
-              visibility: !prevState.visibility,
-            }))
+            setModalState({
+              mode: "add",
+              data: {},
+              visibility: true,
+            })
           }
         />
       </div>
