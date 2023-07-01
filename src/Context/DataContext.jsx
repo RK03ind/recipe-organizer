@@ -1,9 +1,9 @@
 import { createContext, useReducer } from "react";
-
+import { nanoid } from "nanoid";
 export const DataContext = createContext();
 const intialValue = [
   {
-    cuisine: "Italian",
+    cuisineType: "Italian",
     id: 1,
     name: "Spaghetti Bolognese",
     ingredients: [
@@ -29,6 +29,20 @@ const intialValue = [
 ];
 const reducer = (state, action) => {
   switch (action.type) {
+    case "ADD": {
+      return [
+        ...state,
+        {
+          ...action.payload,
+          id: nanoid(),
+        },
+      ];
+    }
+    case "UPDATE": {
+      return state.map((item) =>
+        item.id === action.payload.id ? action.payload : item
+      );
+    }
     default:
       return state;
   }
